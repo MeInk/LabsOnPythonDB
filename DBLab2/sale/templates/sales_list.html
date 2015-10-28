@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>BDLab2</title>
+    {% load staticfiles %}
+    <link rel="stylesheet" type="text/css" href="{% static 'css/bootstrap.min.css' %}" />
+    <link rel="stylesheet" type="text/css" href="{% static 'style.css' %}" />
+    <link rel="stylesheet" type="text/css" href="{% static 'css/bootstrap-theme.min.css' %}" />
+</head>
+<body>
+    <div class="container">
+         <h3>List of sales</h3>
+         <div class="row">
+             <div class="col-xs-12">
+                 <a type="button" class="btn btn-warning pull-right" style="margin-bottom: 5px" href="/sale/list/">
+                     <span class="glyphicon glyphicon-home" aria-hidden="false"></span>
+                 </a>
+                 <a type="button" class="btn btn-warning pull-right" style="margin-bottom: 5px; margin-right: 5px" href="/sale/list/init">
+                     <span class="glyphicon glyphicon-retweet" aria-hidden="false"></span>
+                 </a>
+             </div>
+         </div>
+         <table class="table table-bordered">
+             <th>Product</th>
+             <th>Category</th>
+             <th>Price</th>
+             <th>Quantity</th>
+             <th>Discount</th>
+             <th>Customer</th>
+             <th>Address</th>
+             <th>Phone</th>
+             <th>Date</th>
+             <th>Holiday</th>
+             <th>Weekend</th>
+             <th>Comment</th>
+             <th>Fiches</th>
+             {% for sale in sales %}
+             <tr>
+                   <td>{{ sale.ProductName }}</td>
+                   <td>{{ sale.CategoryName }}</td>
+                   <td>{{ sale.ProductPrice }}</td>
+                   <td>{{ sale.LineItemQuantity }}</td>
+                   <td>{{ sale.LineItemDiscount }}</td>
+                   <td>{{ sale.ContactName }}</td>
+                   <td>{{ sale.Address }}</td>
+                   <td>{{ sale.Phone }}</td>
+                   <td>{{ sale.TheDate }}</td>
+                   <td>{{ sale.Holiday }}</td>
+                   <td>{{ sale.Weekend }}</td>
+                   <td>{{ sale.Comment }}</td>
+                   <td>
+                       <a type="button" class="btn btn-primary" href="/sale/list/remove/{{ sale.SaleId }}">
+                           <span class="glyphicon glyphicon-trash" aria-hidden="false"></span>
+                       </a>
+                       <a type="button" class="btn btn-danger" href="/sale/list/change/{{ sale.SaleId }}">
+                           <span class="glyphicon glyphicon-cog" aria-hidden="false"></span>
+                       </a>
+                   </td>
+             </tr>
+             {% endfor %}
+        </table>
+        <div class="row">
+            <div class="col-xs-12">
+                <a type="button" class="btn btn-success pull-right" href="/sale/list/add">
+                   <span class="glyphicon glyphicon-plus" aria-hidden="false"></span>
+               </a>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-xs-4">
+                <form class="form-inline" method="post" action="/sale/list/search/text/">
+                  <div class="form-group">
+                    <label class="sr-only" for="exampleInputAmount">Amount (in dollars)</label>
+                    <div class="input-group">
+                      <div class="input-group-addon"><span class="glyphicon glyphicon-search" aria-hidden="false"></span></div>
+                      <input type="text" class="form-control" id="exampleInputAmount" name="text" placeholder="Text">
+                      <!--<div class="input-group-addon">.00</div>-->
+                    </div>
+                  </div><br>
+                  {% csrf_token %}
+                  <button type="submit" class="btn btn-primary">Search</button>
+                </form>
+            </div>
+            <div class="col-xs-4">
+                <form class="form-inline" method="post" action="/sale/list/search/price/">
+                  <div class="form-group">
+                    <label class="sr-only" for="exampleInputAmount">Amount (in dollars)</label>
+                    <div class="input-group">
+                      <div class="input-group-addon">From</div>
+                      <input type="text" class="form-control" id="exampleInputAmount" name="min_price" placeholder="1">
+                      <!--<div class="input-group-addon">.00</div>-->
+                    </div>
+                    <div class="input-group">
+                      <div class="input-group-addon">To</div>
+                      <input type="text" class="form-control" id="exampleInputAmount" name="max_price" placeholder="9999">
+                      <!--<div class="input-group-addon">.00</div>-->
+                    </div>
+                      {% csrf_token %}
+                  </div>
+                  <button type="submit" class="btn btn-primary">Search by Price</button>
+                </form>
+            </div>
+            <div class="col-xs-4">
+                <form class="form-inline" method="post" action="/sale/list/search/boolean/">
+                  <div class="form-group">
+                    <div class="checkbox">
+                      <label>
+                        <input type="checkbox" value="Holiday" name="Holiday">
+                        Holiday
+                      </label>
+                    </div><br>
+                    <div class="checkbox">
+                      <label>
+                        <input type="checkbox" value="Weekend" name="Weekend">
+                        Weekend
+                      </label>
+                    </div>
+                  </div><br>
+                    {% csrf_token %}
+                  <button type="submit" class="btn btn-primary">Search</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
