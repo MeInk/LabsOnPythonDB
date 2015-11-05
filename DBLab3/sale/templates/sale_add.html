@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:sale.ProductName xmlns:sale.ProductName>
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <!-- Latest compiled and minified CSS -->
+    {% load staticfiles %}
+    <link rel="stylesheet" type="text/css" href="{% static 'css/bootstrap.min.css' %}" />
+    <link rel="stylesheet" type="text/css" href="{% static 'style.css' %}" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+</head>
+<body>
+    <div class="container">
+        <h3>Work with sale</h3>
+        <form class="form-horizontal" method="post" action="/sale/list/add/">
+          <div class="form-group">
+            <label for="ProductName" class="col-sm-2 control-label">Product</label>
+            <div class="col-sm-10">
+              <input type="text" class="form-control" id="ProductName" value="{{sale.product.name|default_if_none:''}}" name="ProductName" placeholder="Some text">
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="CategoryName" class="col-sm-2 control-label">Category</label>
+            <div class="col-sm-10">
+              <input type="text" class="form-control" id="CategoryName" value="{{sale.product.category|default_if_none:''}}" name="CategoryName" placeholder="Some text">
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="ProductPrice" class="col-sm-2 control-label">Price</label>
+            <div class="col-sm-10">
+              <input type="text" class="form-control" id="ProductPrice" value="{{sale.product.price|default_if_none:''}}" name="ProductPrice" placeholder="Some integer">
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="LineItemQuantity" class="col-sm-2 control-label">Quantity</label>
+            <div class="col-sm-10">
+              <input type="text" class="form-control" id="LineItemQuantity" value="{{sale.quantity|default_if_none:''}}" name="LineItemQuantity" placeholder="Some integer">
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="LineItemDiscount" class="col-sm-2 control-label">Discount</label>
+            <div class="col-sm-10">
+              <input type="text" class="form-control" id="LineItemDiscount" value="{{sale.discount|default_if_none:''}}" name="LineItemDiscount" placeholder="Some integer">
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="ContactName" class="col-sm-2 control-label">Contact Name</label>
+            <div class="col-sm-10">
+              <input type="text" class="form-control" id="ContactName" value="{{sale.customer.name|default_if_none:''}}" name="ContactName" placeholder="Some text">
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="Address" class="col-sm-2 control-label">Address</label>
+            <div class="col-sm-10">
+              <input type="text" class="form-control" id="Address" value="{{sale.customer.address|default_if_none:''}}" name="Address" placeholder="Some text">
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="Phone" class="col-sm-2 control-label">Phone</label>
+            <div class="col-sm-10">
+              <input type="text" class="form-control" id="Phone" value="{{sale.customer.phone|default_if_none:''}}" name="Phone" placeholder="Some integer">
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="TheDate" class="col-sm-2 control-label">Date</label>
+            <div class="col-sm-10">
+              <input type="text" onfocus="(this.type='date')" onblur="(this.type='text')" class="form-control" id="TheDate" value="{{sale.time.date|default_if_none:''}}" name="TheDate" placeholder="some date">
+            </div>
+          </div>
+          <div class="form-group">
+            <div class="col-sm-offset-2 col-sm-10">
+              <div class="checkbox">
+                <label>
+                  <input type="checkbox" id="Holiday" name="Holiday" value="Holiday" {% if sale.time.holiday == True %} checked {% endif %}> Holiday
+                </label>
+              </div>
+            </div>
+          </div>
+          <div class="form-group">
+            <div class="col-sm-offset-2 col-sm-10">
+              <div class="checkbox">
+                <label>
+                  <input type="checkbox" id="Weekend" name="Weekend" value="Weekend" {% if sale.time.weekend == 1 %} checked {% endif %}> Weekend
+                </label>
+              </div>
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="Comment" class="col-sm-2 control-label">Comment</label>
+            <div class="col-sm-10">
+              <input type="text" class="form-control" id="Comment" value="{{sale.comment|default_if_none:''}}" name="Comment" placeholder="some text">
+            </div>
+          </div>
+          {% csrf_token %}
+          <div class="form-group">
+            <div class="col-sm-offset-2 col-sm-10">
+              <button type="submit" class="btn btn-default">Save</button>
+            </div>
+          </div>
+        </form>
+    </div>
+</body>
+</html>

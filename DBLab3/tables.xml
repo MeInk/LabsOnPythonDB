@@ -1,0 +1,217 @@
+<all_tables>
+    <customer_table>
+        <customer>
+            <ContactName>Name1</ContactName>
+            <Address>address1</Address>
+            <Phone>64765</Phone>
+        </customer>
+
+        <customer>
+            <ContactName>Name2</ContactName>
+            <Address>address2</Address>
+            <Phone>8364765</Phone>
+        </customer>
+
+        <customer>
+            <ContactName>Name3</ContactName>
+            <Address>address3</Address>
+            <Phone>8364765</Phone>
+        </customer>
+
+        <customer>
+            <ContactName>Name4</ContactName>
+            <Address>address4</Address>
+            <Phone>8364765</Phone>
+        </customer>
+
+        <customer>
+            <ContactName>Name5</ContactName>
+            <Address>address5</Address>
+            <Phone>64765</Phone>
+        </customer>
+
+        <customer>
+            <ContactName>Name6</ContactName>
+            <Address>address6</Address>
+            <Phone>8364765</Phone>
+        </customer>
+
+        <customer>
+            <ContactName>Name7</ContactName>
+            <Address>address7</Address>
+            <Phone>8364765</Phone>
+        </customer>
+
+        <customer>
+            <ContactName>Name8</ContactName>
+            <Address>address8</Address>
+            <Phone>8364765</Phone>
+        </customer>
+    </customer_table>
+    <Product_table>
+        <product>
+             <ProductName>product1</ProductName>
+             <CategoryName>category1</CategoryName>
+             <ProductPrice>12</ProductPrice>
+        </product>
+
+        <product>
+             <ProductName>product2</ProductName>
+             <CategoryName>category2</CategoryName>
+             <ProductPrice>3</ProductPrice>
+        </product>
+
+        <product>
+             <ProductName>product3</ProductName>
+             <CategoryName>category3</CategoryName>
+             <ProductPrice>123</ProductPrice>
+        </product>
+
+        <product>
+             <ProductName>product4</ProductName>
+             <CategoryName>category4</CategoryName>
+             <ProductPrice>23</ProductPrice>
+        </product>
+
+        <product>
+             <ProductName>product5</ProductName>
+             <CategoryName>category5</CategoryName>
+             <ProductPrice>103</ProductPrice>
+        </product>
+
+        <product>
+             <ProductName>product6</ProductName>
+             <CategoryName>category6</CategoryName>
+             <ProductPrice>130</ProductPrice>
+        </product>
+
+        <product>
+             <ProductName>product7</ProductName>
+             <CategoryName>category7</CategoryName>
+             <ProductPrice>903</ProductPrice>
+        </product>
+
+        <product>
+             <ProductName>product8</ProductName>
+             <CategoryName>category8</CategoryName>
+             <ProductPrice>743</ProductPrice>
+        </product>
+    </Product_table>
+    <Time_table>
+        <time>
+            <TheDate>2014-12-12</TheDate>
+            <Holiday>1</Holiday>
+            <Weekend>0</Weekend>
+        </time>
+
+        <time>
+            <TheDate>2014-12-12</TheDate>
+            <Holiday>0</Holiday>
+            <Weekend>1</Weekend>
+        </time>
+
+        <time>
+            <TheDate>2014-12-12</TheDate>
+            <Holiday>0</Holiday>
+            <Weekend>0</Weekend>
+        </time>
+
+        <time>
+            <TheDate>2014-12-12</TheDate>
+            <Holiday>1</Holiday>
+            <Weekend>1</Weekend>
+        </time>
+
+        <time>
+            <TheDate>2014-12-12</TheDate>
+            <Holiday>0</Holiday>
+            <Weekend>1</Weekend>
+        </time>
+
+        <time>
+            <TheDate>2014-12-12</TheDate>
+            <Holiday>1</Holiday>
+            <Weekend>0</Weekend>
+        </time>
+
+        <time>
+            <TheDate>2014-12-12</TheDate>
+            <Holiday>1</Holiday>
+            <Weekend>0</Weekend>
+        </time>
+
+        <time>
+            <TheDate>2014-12-12</TheDate>
+            <Holiday>1</Holiday>
+            <Weekend>0</Weekend>
+        </time>
+    </Time_table>
+
+    <Sale_table>
+        <sale>
+            <ProductId>1</ProductId>
+            <CustomerId>1</CustomerId>
+            <TimeId>1</TimeId>
+            <LineItemQuantity>434</LineItemQuantity>
+            <LineItemDiscount>23</LineItemDiscount>
+            <Comment>Global CSS settings</Comment>
+        </sale>
+        <sale>
+            <ProductId>2</ProductId>
+            <CustomerId>2</CustomerId>
+            <TimeId>2</TimeId>
+            <LineItemQuantity>234</LineItemQuantity>
+            <LineItemDiscount>23</LineItemDiscount>
+            <Comment>Assembler</Comment>
+        </sale>
+        <sale>
+            <ProductId>3</ProductId>
+            <CustomerId>3</CustomerId>
+            <TimeId>3</TimeId>
+            <LineItemQuantity>42</LineItemQuantity>
+            <LineItemDiscount>234</LineItemDiscount>
+            <Comment>Python 2.7</Comment>
+        </sale>
+        <sale>
+            <ProductId>4</ProductId>
+            <CustomerId>4</CustomerId>
+            <TimeId>4</TimeId>
+            <LineItemQuantity>432</LineItemQuantity>
+            <LineItemDiscount>345</LineItemDiscount>
+            <Comment>Java</Comment>
+        </sale>
+        <sale>
+            <ProductId>5</ProductId>
+            <CustomerId>5</CustomerId>
+            <TimeId>5</TimeId>
+            <LineItemQuantity>567</LineItemQuantity>
+            <LineItemDiscount>568</LineItemDiscount>
+            <Comment>C++</Comment>
+        </sale>
+        <sale>
+            <ProductId>6</ProductId>
+            <CustomerId>6</CustomerId>
+            <TimeId>6</TimeId>
+            <LineItemQuantity>456</LineItemQuantity>
+            <LineItemDiscount>34</LineItemDiscount>
+            <Comment>JavaScript Python</Comment>
+        </sale>
+        <sale>
+            <ProductId>7</ProductId>
+            <CustomerId>7</CustomerId>
+            <TimeId>7</TimeId>
+            <LineItemQuantity>45</LineItemQuantity>
+            <LineItemDiscount>23</LineItemDiscount>
+            <Comment>Hello, world</Comment>
+        </sale>
+        <sale>
+            <ProductId>8</ProductId>
+            <CustomerId>8</CustomerId>
+            <TimeId>8</TimeId>
+            <LineItemQuantity>908</LineItemQuantity>
+            <LineItemDiscount>5</LineItemDiscount>
+            <Comment>Work for money!</Comment>
+        </sale>
+    </Sale_table>
+</all_tables>
+
